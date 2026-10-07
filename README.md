@@ -1,6 +1,33 @@
 # EcoTrack
 
-EcoTrack is a full-stack carbon-footprint tracker built around everyday household and travel activities, with Nigeria as its initial product context. It helps a user record activities, estimate associated emissions, review progress toward goals, and plan multi-leg car journeys.
+**A full-stack sustainability app for understanding the emissions behind everyday choices.**
+
+EcoTrack lets people track household and travel activities, estimate their carbon emissions, set goals, and explore how changes to their routines could affect their footprint. It is designed with Nigeria as its initial product context and built as an end-to-end portfolio project.
+
+### Try the live app
+
+**[Open EcoTrack](https://eco-track-1wen2cuxa-eco-track3.vercel.app)** · [View the source code](https://github.com/cn108/EcoTrack)
+
+Create an account to explore the app. The public demo runs on free-tier hosting, so the first request may take a little time while the backend wakes up. Please use demo data rather than sensitive personal information.
+
+## Product capabilities
+
+- **Personal accounts:** registration and sign-in, with activity and goals scoped to the signed-in user.
+- **Emissions tracking:** record transport, household energy, food, travel, waste, and purchases; view estimates based on documented emission factors.
+- **Goals and progress:** set targets and see progress toward them.
+- **Trip planning:** build a multi-leg car journey and estimate distance, fuel use, emissions, and optional spend using the vehicle efficiency and fuel price provided by the user.
+- **Open routing:** look up driving routes using OpenStreetMap geocoding and OSRM, with manual distance entry as a fallback.
+- **Fuel insights:** compare estimated fuel costs using prices entered by the user.
+- **Calculation transparency:** review calculation methods, factor sources, and limitations in the app.
+
+## Engineering highlights
+
+- Built and deployed a complete web application: Next.js frontend, FastAPI backend, PostgreSQL database, and cloud hosting.
+- Validates and calculates activity emissions on the backend using sourced factors; the browser does not supply the final emissions result.
+- Uses authenticated API requests, protected user data, database migrations, and an optional read-only admin API with privacy boundaries.
+- Routes browser API calls through a same-origin Next.js proxy to support secure refresh cookies in the deployed app.
+- Includes automated frontend and backend tests, linting, and a production build in GitHub Actions.
+- Uses OpenStreetMap-based route estimates rather than a paid Google Maps API. EcoTrack does not access device GPS or track live location.
 
 ## What it does
 
